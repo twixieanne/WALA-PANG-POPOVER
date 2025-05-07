@@ -1,0 +1,762 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Changed to allow scrolling */
+  background-image: url('Assets/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* Ensure full height */
+  margin: 0;
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+}
+
+h1 {
+  color: #f2eecd;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  margin-top: 75px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 30px rgb(230, 224, 73);
+  font-size: 75px;
+}
+
+.single-line {
+  border-top: 5px solid #fbf0cb;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 1100px;
+}
+
+
+body {
+  cursor: url('Assets/fairy.png') 16 16, auto;
+}
+
+/* Fairy Dust Effect */
+.fairy-dust {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* Prevent interaction with the trail */
+  z-index: 9999;
+  /* Ensure the dust is above other elements */
+  display: none;
+  /* Initially hide the container */
+}
+
+.fairy-dust .particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(237, 249, 16, 0.8);
+  /* Yellow color for particles */
+  border-radius: 50%;
+  animation: fadeOut 1s forwards;
+  /* Fade out animation */
+}
+
+/* Animation to make particles fade out */
+@keyframes fadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0.8);
+    opacity: 100;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 100;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100;
+  }
+}
+
+/* Random light movement */
+@keyframes moveLight {
+  0% {
+    top: -10%;
+    left: 50%;
+  }
+
+  100% {
+    top: 110%;
+    left: 50%;
+  }
+}
+
+
+/* Navigation Bar Styles */
+nav h2 {
+  font-family: 'Libre Baskerville', serif;
+  text-shadow: 2px 2px 6px black;
+  color: #b19848;
+  font-size: 35px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 3px 4px 2px 9px;
+  margin-top: 20px;
+}
+
+nav h2 a {
+  text-decoration: underline;
+  color: #ebe4c0;
+  padding: 10px 50px;
+  font-weight: lighter;
+  transition: color 0.3s ease;
+}
+
+nav h2 a:hover {
+  color: #bee026;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+  cursor: url('Assets/mushroom.png'), auto;
+}
+
+
+
+/* Gallery Styles */
+#gallery {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Ensures gallery stays within screen width */
+}
+
+#tonipopover {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  font-size: 15px;
+  text-align: justify;
+  padding-bottom: 100px;
+  font-family: 'Libre Baskerville', serif;
+  background-color: rgb(193, 234, 132);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  /* Send it to the back */
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  /* Ensures the popover is vertically centered */
+}
+
+
+
+#trixiepopover {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  font-size: 15px;
+  text-align: justify;
+  padding-bottom: 100px;
+  font-family: 'Libre Baskerville', serif;
+  background-color: rgb(193, 234, 132);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  /* Send it to the back */
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+}
+
+#aripopover {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  font-size: 15px;
+  text-align: justify;
+  padding-bottom: 100px;
+  font-family: 'Libre Baskerville', serif;
+  background-color: rgb(193, 234, 132);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  /* Send it to the back */
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+}
+
+.popover {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.image-card.active .popover {
+  display: block;
+}
+
+.popover-info {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  max-width: 250px;
+  z-index: 999;
+}
+
+.popover-info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+
+.image-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.image-card:hover img.front {
+  transform: rotateY(180deg);
+
+}
+
+.image-card:hover {
+  cursor: url('Assets/mushroom.png'), auto;
+}
+
+.image-card:hover img.back {
+  transform: rotateY(0);
+}
+
+.image-card img.back {
+  transform: rotateY(180deg);
+}
+
+/* Project section styles */
+#project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+
+}
+
+.scroll-image {
+  width: 670px;
+  height: 800px;
+  object-fit: contain;
+  margin: 0;
+}
+
+.text-overlay {
+  position: absolute;
+  top: -50px;
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
+  color: #e9dcb2;
+  font-weight: bolder;
+  padding-left: 97px;
+  text-shadow: 2px 2px 4px black;
+  z-index: 1;
+}
+
+.text {
+  position: absolute;
+  color: #1a472a;
+  font-size: 20.5px;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  font-family: 'Tagesschrift';
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 2px rgb(221, 202, 202);
+  text-align: center;
+}
+
+.name-container {
+  text-align: center;
+}
+
+.name-container .name {
+  font-family: 'Libre Baskerville', serif;
+  color: #e9dcb2;
+  font-weight: bolder;
+  font-size: 50px;
+  text-align: start;
+  text-shadow: 2px 2px 2px black;
+  display: block;
+}
+
+/* Flowers Section */
+.flowers {
+  display: flex;
+  justify-content: space-around;
+  /* position: */
+  margin-bottom: 20px;
+}
+
+.flowers img {
+  height: 80px;
+  justify-content: start;
+}
+
+.flower-board {
+  flex-grow: 1;
+}
+
+/* Initially set the flowers to be small */
+#html {
+  transform: scale(0);
+  /* Start from a small size */
+  transition: transform 1s ease;
+  /* Smooth transition for scaling */
+  display: inline-block;
+  /* Ensure the flowers behave like inline elements */
+  margin-left: 290px;
+}
+
+#css {
+  transform: scale(0);
+  /* Start from a small size */
+  transition: transform 1s ease;
+  /* Smooth transition for scaling */
+  display: inline-block;
+  /* Ensure the flowers behave like inline elements */
+  margin-right: 1000px;
+}
+
+#java {
+  transform: scale(0);
+  /* Start from a small size */
+  transition: transform 1s ease;
+  /* Smooth transition for scaling */
+  display: inline-block;
+  /* Ensure the flowers behave like inline elements */
+  margin-left: 250px;
+  position: absolute;
+}
+
+/* Add animation for the grow effect when toggled */
+#html.flower-grow {
+  transform: scale(1);
+  /* The flower will grow to its full size */
+  animation: growFlower 2s ease-out forwards;
+}
+
+#css.flower-grow {
+  transform: scale(1);
+  /* The flower will grow to its full size */
+  animation: growFlower 2s ease-out forwards;
+}
+
+#java.flower-grow {
+  transform: scale(1);
+  /* The flower will grow to its full size */
+  animation: growFlower 2s ease-out forwards;
+}
+
+/* Keyframes for the flower growth animation */
+@keyframes growFlower {
+  0% {
+    transform: scale(0);
+    /* Start small */
+  }
+
+  100% {
+    transform: scale(1);
+    /* End at normal size */
+  }
+}
+
+#sf1 {
+  position: absolute;
+  bottom: 150px;
+  height: 215px;
+  right: -517px;
+}
+
+
+#sf2 {
+  position: absolute;
+  bottom: 150px;
+  height: 215px;
+  right: -1020px;
+}
+
+#sf3 {
+  position: absolute;
+  bottom: 150px;
+  height: 215px;
+  left: 1340px;
+}
+
+#rose1 {
+  position: absolute;
+  bottom: -70px;
+  height: 215px;
+  left: 150px;
+}
+
+#rose2 {
+  position: absolute;
+  bottom: -70px;
+  height: 215px;
+  left: 670px;
+}
+
+#rose3 {
+  position: absolute;
+  bottom: -70px;
+  height: 180px;
+  left: 1250px;
+}
+
+#lily1 {
+  position: absolute;
+  bottom: -70px;
+  height: 180px;
+  right: 600px;
+}
+
+#lily2 {
+  position: absolute;
+  bottom: -70px;
+  height: 180px;
+  left: -260px;
+}
+
+#lily3 {
+  position: absolute;
+  bottom: -70px;
+  height: 215px;
+  left: 250px;
+}
+
+#personalities {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  gap: 3rem;
+
+}
+
+#toni_text {
+  left: 160px;
+}
+
+#trixie_text {
+  left: 140px;
+}
+
+#arianne_text {
+  left: 120px;
+}
+
+/* Accolades section */
+#accolades {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  gap: 3rem;
+  margin-right: 100px;
+  margin-top: 40px;
+}
+
+#trixieproj {
+  font-size: 19.5px;
+}
+
+.armor-board .names {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  gap: 350px;
+  /* adjust space between names */
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  color: #e9dcb2;
+  margin: 30px 0 10px 645px;
+  /* space above and below */
+  text-shadow: 2px 2px 2px black;
+}
+
+.names {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  gap: 350px;
+  /* adjust space between names */
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  color: #e9dcb2;
+  margin: 30px 0 10px 645px;
+  /* space above and below */
+  text-shadow: 2px 2px 2px black;
+
+}
+
+.hidden {
+  display: none;
+}
+
+#toniproj {
+  right: 5000px;
+
+}
+
+#onit {
+  left: 1000px;
+}
+
+.menu {
+  background-color: rgba(118, 249, 86, 0.5);
+  box-shadow: 0 15px 9px #27701c, 0 5px 15px -4px #000;
+  justify-content: space-evenly;
+  padding: 50px;
+  border-radius: 15px;
+  left: 170px;
+  margin-left: -10px;
+  margin: 10px 35px 20px 10px;
+  text-align: justify;
+  height: 400px;
+  width: 240px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Aligns all children elements (including buttons) */
+}
+
+.menu h2 {
+  font-size: 28px;
+  color: #e3e974;
+  text-align: center;
+  position: absolute;
+  text-shadow: 2px 2px 2px rgb(95, 87, 24);
+  top: 10px;
+  /* Adjust this value to position the text closer to the top */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu button {
+  background-color: #e4ea79;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 6px 0 #9c951a, 0 5px 15px -4px #000;
+  /* Changed the box-shadow color to dark yellow */
+  color: #442c08;
+  cursor: pointer;
+  font-family: roboto;
+  font-size: 25px;
+  font-weight: 800;
+  height: 70px;
+  padding: 11px 20px;
+  /* Adjust padding for spacing inside the button */
+  top: 35px;
+  justify-content: center;
+  position: relative;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s ease-in-out, margin-top 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+  width: 150px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  /* Ensures vertical alignment of text and image */
+  text-align: center;
+}
+
+.menu button img {
+  height: 50px;
+  /* Adjusted height to keep images proportionate */
+  vertical-align: middle;
+  /* Aligns the image with the text */
+
+
+}
+
+.menu button span {
+  font-size: 18px;
+  /* Ensures text size is readable with the image */
+}
+
+.armor_names {
+  display: flex;
+  justify-content: center;
+  gap: 350px;
+  /* adjust space between names */
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  color: #e9dcb2;
+  margin-top: 100px;
+  margin: 10px 0 400px 300px;
+  /* space above and below */
+  text-shadow: 2px 2px 2px black;
+}
+
+:root {
+  --primary: #25abd9;
+  --primary-dark: #2090b7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dcf5ff;
+  margin: 0;
+  padding: 0;
+}
+
+.armor-board button.clicked {
+  animation: clickEffect 0.5s ease-out;
+  background-color: #d99322; /* Retain color after animation */
+  outline: none;
+}
+
+/* Reset the button state when clicked */
+.armor-board button:active {
+  background-color: #d99322;
+  outline: none;
+}
+
+.armor-board button:hover {
+  cursor: url('Assets/mushroom.png'), auto;
+}
+
+.menu .container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+/* Hover and Focus States */
+.menu button:hover,
+.menu button:focus {
+  opacity: 0.9;
+  background-color: #d99322;
+  outline: 0;
+  cursor: url('Assets/mushroom.png'), auto;
+}
+
+/* Add this to your existing CSS */
+
+#trixbody {
+  left: 1190px;
+}
+.accolades-bottom-image {
+  position: absolute;
+  bottom: -150px; /* Adjust the distance from the bottom */
+  left: 690px;
+  transform: translateX(-50%); /* Center the image horizontally */
+  width: 890px; /* Adjust the size of the image */
+  height: 500px;
+  z-index: -1; /* Ensure the image stays behind the text */
+}
+
+#aribody {
+  left: 1740px;
+}
+
+/* Ensure the container has relative positioning */
+#accolades {
+  position: relative; /* So the image is positioned relative to this section */
+}
+
+/* Optional: add a margin to ensure space between the image and text */
+.armor_names {
+  margin-bottom: 80px; /* Adjust for better spacing */
+}
+
+/* 3D Click Animation */
+@keyframes clickEffect {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  20% {
+    transform: scale(0.9) translateY(5px); /* Button "presses" down */
+  }
+  40% {
+    transform: scale(1.1) translateY(-2px); /* Button "bounces" up */
+  }
+  60% {
+    transform: scale(0.98) translateY(2px); /* Button "settles" down */
+  }
+  100% {
+    transform: scale(1) translateY(0); /* Final position */
+  }
+}
+
+/* Reset other buttons when clicked */
+.menu button.clicked {
+  background-color: #e4ea79;
+  outline: none;
+  animation: clickEffect 0.5s ease-out;
+}
+
+/* When the button is clicked, make it maintain color without resetting */
+.menu button:active {
+  background-color: #d99322;
+  outline: none;
+}
