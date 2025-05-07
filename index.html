@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <title>The Triangular Odyssey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p style="background-image: url('Assets/bg.jpg');">
+
+    <header>
+        <h1>The Triangular Odyssey</h1>
+    </header>
+
+    <div class="single-line"></div> <!-- Single Line Border -->
+
+    <nav>
+        <h2>
+            <a href="#gallery">Home</a>
+            <a href="#project">Project</a>
+            <a href="#personalities">Personalities</a>
+            <a href="#accolades">Accolades</a>
+            <a href="https://docs.google.com/document/d/10hSCJBye468DoA4ztPptV4vOUM2tauYNQdB90IUuwSo/edit?fbclid=IwZXh0bgNhZW0CMTEAAR6k6EqZw9FjMcGyPury6jzIePyhFg4ykYWRp0I6Lx5TrWpho3G4n9f0VxMX_g_aem_txDBNQYnrO5ajUACh0xqqw&tab=t.0">Beliefs</a>
+            
+        </h2>
+        </h2>
+    </nav>
+
+    <main>
+        <section id="gallery">
+            <!-- First Image Pair -->
+            <div class="image-card" onclick="showPopover(this)">
+                <img class="front" src="Assets/tonihead.png" alt="toni head">
+                <img class="back" src="Assets/toni.png" alt="toni">
+                <div id="tonipopover" class="popover">Like a Naiad guarding the rivers of ancient Greece, Toni flows
+                    through the challenges of school with grace and determination. In mythology, Naiads were known to
+                    bring life and resilience to the lands they touched, and Toni mirrors this energy, arming herself
+                    with knowledge and perseverance as she navigates the currents of learning. Her armor? A sharp mind
+                    and an unwavering spirit that keeps her focused on her goals.</div>
+            </div>
+
+            <!-- Second Image Pair -->
+            <div class="image-card" onclick="showPopover(this)">
+                <img class="front" src="Assets/trixiehead.png" alt="trixie head">
+                <img class="back" src="Assets/trixie.png" alt="trixie">
+                <div id="trixiepopover" class="popover">Trixie embodies the spirit of the Dryads, the nymphs of the
+                    trees, deeply rooted yet reaching ever higher. In Greek mythology, Dryads were guardians of the
+                    forest, protecting and nurturing their surroundings. Like them, Trixie thrives on growth, grounding
+                    herself in her studies while expanding her skills and wisdom. Her armor is her adaptability and
+                    creativity, which help her weather any storm and flourish in her academic journey.</div>
+            </div>
+
+            <!-- Third Image Pair -->
+            <div class="image-card" onclick="showPopover(this)">
+                <img class="front" src="Assets/arihead.png" alt="ari head">
+                <img class="back" src="Assets/ari.png" alt="arianne">
+                <div id="aripopover" class="popover">Arianne channels the fiery essence of the Lampads, the nymphs who
+                    accompanied Hecate, the goddess of wisdom and magic. Known for lighting the way through the
+                    darkness, Lampads were symbols of guidance and transformation. Like them, Arianne wields her armor
+                    of curiosity and determination to shine in every challenge she faces at school, illuminating paths
+                    not just for herself but for those around her.</div>
+            </div>
+        </section>
+
+
+        <div class="fairy-dust"></div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section id="project">
+            <div class="container">
+                <div id="toni_text" class="text-overlay">TONI</div>
+                <img src="Assets/toniscroll.png" alt="toniscroll" class="scroll-image">
+                <ul>
+                    <p class="text">
+                        ML Tournament 2023-2024: Documentation Team<br><br>
+                        TNC Trip: Batch Leader<br><br>
+                        S. P. A. R. K.- Participant<br><br>
+                        CodeCraft- Participant<br><br>
+                        Campus Connect- Host<br><br>
+                        College Talkfest (Outside)- Host<br><br>
+                        OCS Branch (OLOPSC SHS) - Host<br><br>
+                        Sportsfest Interhouse 2023-2024- Host<br><br>
+                        ADET Project- DormEATory<br><br>
+                        Foundation Day Jail Booth- Committee</p>
+                    </p>
+            </div>
+
+            <div class="container">
+                <div id="trixie_text" class="text-overlay">TRIXIE</div>
+                <img src="Assets/trixiescroll.png" alt="trixiescroll" class="scroll-image">
+                <p id="trixieproj" class="text">
+                    ML Tournament 2023-2024- Documentation Team<br><br>
+                    TNC Trip- Documentation and Batch Leader<br><br>
+                    Campus Connect- Head Committee and Documentation<br><br>
+                    S. P. A. R. K.- Participant<br><br>
+                    CodeCraft- Participant<br><br>
+                    College Talkfest (OLOPSC SHS and Outside)- Usher<br><br>
+                    Sportsfest Interhouse 2023-2024- ToW, Power Dance, Relay<br><br>
+                    ADET Project: Course Compass<br><br>
+                    Foundation Day Jail Booth- Committee<br><br>
+                </p>
+            </div>
+
+            <div class="container">
+                <div id="arianne_text" class="text-overlay">ARIANNE</div>
+                <img src="Assets/ariscroll.png" alt="ariannescroll" class="scroll-image">
+                <p id="ariproj" class="text">
+                    ML Tournament 2023-2024- Technical Team<br><br>
+                    TNC Trip- Participant<br><br>
+                    Campus Connect- Participant<br><br>
+                    S. P. A. R. K.- Participant<br><br>
+                    CodeCraft- Participant<br><br>
+                    College Talkfest (OLOPSC SHS and Outside)- OCS Branch Volunteer<br><br>
+                    Sportsfest Interhouse 2023-2024- Power Dance<br><br>
+                    ADET Project: AI Learn<br><br>
+                    Foundation Day Jail Booth- Committee</p>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+
+
+        <div class="flower-board">
+            <div class="names">
+                <div>TONI</div>
+                <div>TRIXIE</div>
+                <div>ARIANNE</div>
+            </div>
+
+            <section id="personalities">
+                <div class="container">
+                    <div class="menu">
+                        <h2>Description of flowers</h2>
+                        <button id="htmlbtn" onclick="toggleFlower('html')"><img src="Assets/sunflower.png"
+                                alt="sunflower">HTML</button>
+                        <button id="cssbtn" onclick="toggleFlower('css')"><img src="Assets/rose.png"
+                                alt="rose">CSS</button>
+                        <button id="javabtn" onclick="toggleFlower('java')"><img src="Assets/lily.png"
+                                alt="lily">JAVA</button>
+                    </div>
+
+
+                    <div id="html" class="flowers hidden">
+                        <img id="sf1" src="Assets/sunflower.png" alt="Sunflower">
+                        <img id="sf2" src="Assets/sunflower.png" alt="Sunflower">
+                        <img id="sf3" src="Assets/sunflower.png" alt="Sunflower">
+                    </div>
+                    <div id="css" class="flowers hidden">
+                        <img id='rose1' src="Assets/rose.png" alt="Rose">
+                        <img id='rose2' src="Assets/rose.png" alt="Rose">
+                        <img id="rose3" src="Assets/rose.png" alt="Rose">
+                    </div>
+                    <div id="java" class="flowers hidden">
+                        <img id="lily1" src="Assets/lily.png" alt="Calla Lily">
+                        <img id="lily2" src="Assets/lily.png" alt="Calla Lily">
+                        <img id="lily3" src="Assets/lily.png" alt="Calla Lily">
+                    </div>
+
+                </div>
+        </div>
+        </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="armor-board">
+
+
+            <section id="accolades">
+                <div class="container">
+                    <div class="menu accolades" style="position: relative;">
+                        <h2>Description of armor</h2>
+                        <button id="arbtn" onclick="showArmor('Arrow')">Arrow</button>
+                        <button id="swbtn" onclick="showArmor('Sword')">Sword</button>
+                        <button id="armbtn" onclick="showArmor('Armor')">Armor</button>
+                    </div>
+
+
+                    <!-- <div id="armors" class="armor">
+                        <img id="atoni" src="Assets/tonibody.png" alt="tonibody">
+                        <img id="atrix" src="Assets/trixbody.png" alt="trixiebody">
+                        <img id="aari" src="Assets/aribody.png" alt="ariannebody"> -->
+
+                </div>
+                <div class="armor_names">
+                    <div>TONI</div>
+                    <div>TRIXIE</div>
+                    <div>ARIANNE</div>
+                </div>
+
+                <img id="tonibody" src="Assets/tonibody.png" class="accolades-bottom-image" alt="accolades image">
+                <img id="trixbody" src="Assets/trixbody.png" class="accolades-bottom-image" alt="accolades image">
+                <img id="aribody" src="Assets/aribody.png" class="accolades-bottom-image" alt="accolades image">
+            </section>
+
+           
+
+            <div id="armor-info-popover" class="popover-box hidden"></div>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="script.js"></script>
+    </main>
+</body>
+
+</html>
